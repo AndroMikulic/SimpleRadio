@@ -8,7 +8,7 @@ io.on('stream', function (data) {
     source.buffer = buffer;
   },
     function (e) {
-      console.log("PENIS " + e)
+      console.log(e)
     })
 })
 
