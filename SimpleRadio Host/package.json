@@ -1,0 +1,46 @@
+{
+  "name": "simple-radio",
+  "version": "1.0.0",
+  "description": "A simple radio app with a radio application, web site and node server",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "build": {
+    "appId": "simpleradio",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.ico"
+    }
+  },
+  "author": "Andro Mikulic",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "electron": "^4.0.5",
+    "electron-builder": "^20.38.5"
+  }
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class="html">
+  <head>
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <meta charset="UTF-8">
+    <div></div>
+  </head>
+  <body class="body">
+    <div class="deactivate" id="settings">
+      <div class="settingsCenter">
+        Music folder <br>
+        <div class="musicFolderBtn" onclick="SelectMusicFolder()" id="musicFolder">Select</div> <br> <br>
+        <input style="display:none" id="folderDialog" onchange="ShowSelectedMusicFolder()" type="file" webkitdirectory/>
+        Server address <br>
+        <input id="serverIP" type="text"> <br> <br>
+        Password <br>
+        <input id="password" type="password"> <br> <br>
+        <div class="saveButton" onclick="SaveSettings()">Save</div> <br>
+        <div class="savedIndicator" id="savedIndicator">Saved</div>
+      </div>
+      <div style="position:absolute; bottom: 16px; right: 16px;">
+        <div class="btn" style="display:inline-block" id="settingsBtn" onclick="ToggleSettings()">
+            <img src="icons/home.png" class="icon">
+        </div>
+      </div>
+    </div>
+    <div id="main">
+      <div class="title">Simple Radio</div>
+      <div class="songList"></div>
+      <div class="controls">
+        <table style="position:absolute; bottom:0px">
+          <tr>
+            <td>
+              <div class="dot" id="mic-dot-0"></div>
+            </td>
+            <td>
+                <div class="dot" id="music-dot-0"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="dot" id="mic-dot-1"></div>
+            </td>
+            <td>
+                <div class="dot" id="music-dot-1"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="dot" id="mic-dot-2"></div>
+            </td>
+            <td>
+                <div class="dot" id="music-dot-2"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="dot" id="mic-dot-3"></div>
+            </td>
+            <td>
+                <div class="dot" id="music-dot-3"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="dot" id="mic-dot-4"></div>
+            </td>
+            <td>
+                <div class="dot" id="music-dot-4"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="dot" id="mic-dot-5"></div>
+            </td>
+            <td>
+                <div class="dot" id="music-dot-5"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="dot" id="mic-dot-6"></div>
+            </td>
+            <td>
+                <div class="dot" id="music-dot-6"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="dot" id="mic-dot-7"></div>
+            </td>
+            <td>
+                <div class="dot" id="music-dot-7"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="dot" id="mic-dot-8"></div>
+            </td>
+            <td>
+                <div class="dot" id="music-dot-8"></div>
+            </td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td>
+              <div class="btn" onclick="ToggleMicrophone()">
+                <img src="icons/mic.png" class="icon" id="microphoneIcon">
+              </div>   
+            </td>
+            <td>
+              <div class="btn" onclick="ToggleMusic()">
+                <img src="icons/music.png" class="icon" id="musicIcon">
+              </div>
+            </td>
+          </tr>
+        </table>
+        <div style="position:absolute; bottom: 0px; right: 0px;">
+          <div class="btn" id="streamBtn" onclick="ToggleStream()" style="display:inline-block; margin-right: 16px; background: radial-gradient(rgb(255, 100, 100), transparent);">
+            <img src="icons/stream.png" class="icon">
+          </div>
+          <div class="btn" style="display:inline-block" id="settingsBtn" onclick="ToggleSettings()">
+              <img src="icons/settings.png" class="icon">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="scripts/global.js"></script>
+  <script src="scripts/settings.js"></script>
+  <script src="scripts/microphone.js"></script>
+  <script src="scripts/music.js"></script>
+  <script src="scripts/stream.js"></script>
+</html>
