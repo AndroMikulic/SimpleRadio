@@ -1,5 +1,5 @@
 # SimpleRadio
-# Version 0.1.0
+## Version 0.1.0
 An open-source radio system. Includes an electron app for the radio host, and a backend server with a website written in node and express.
 
 The frontend is written in javascript, CSS and HTML and powered by electron. This part of the app is ment for the radio host.
