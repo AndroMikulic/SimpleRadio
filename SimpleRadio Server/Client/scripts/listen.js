@@ -4,6 +4,7 @@ var source = audioCtx.createBufferSource();
 var io = io()
 
 io.on('stream', function (data) {
+  //This does not work, decodeAudioData() failes to decode.
   audioCtx.decodeAudioData(data, function (buffer) {
     source.buffer = buffer;
   },
