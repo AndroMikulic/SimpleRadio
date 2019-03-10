@@ -39,8 +39,6 @@ io.on('connection', function(socket){
   console.log("New listener")
 })
 
-
-
 /*
   This is used to set up the stream from the radio host to the server
 */
@@ -50,7 +48,7 @@ hostServer.on('error', function (err) {
 })
 
 hostServer.on('message', function(data, client) {
-  io.emit('stream', data)
+  io.emit('stream', { "data" : data })
 })
 
 hostServer.bind(hostServerPort)

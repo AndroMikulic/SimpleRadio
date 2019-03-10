@@ -23,7 +23,7 @@ var constraints = { audio: true, video: false }
 navigator.mediaDevices.getUserMedia(constraints).then(function (microphoneStream) {
   micAudioContext = new AudioContext()
   var mediaStreamSource = micAudioContext.createMediaStreamSource(microphoneStream)
-  var processor = micAudioContext.createScriptProcessor(512, 1, 1)
+  var processor = micAudioContext.createScriptProcessor(1024, 1, 1)
 
   //mediaStreamSource.connect(micAudioContext.destination)
   mediaStreamSource.connect(processor)
