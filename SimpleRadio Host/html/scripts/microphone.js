@@ -30,7 +30,7 @@ navigator.mediaDevices.getUserMedia(constraints).then(function (microphoneStream
   processor.connect(micAudioContext.destination)
   processor.onaudioprocess = function (e) {
     var inputData = e.inputBuffer.getChannelData(0)
-    ipcRenderer.send("microphone", inputData)
+    convertFloat32ToInt16(inputData)
     var inputDataLength = inputData.length
     var total = 0
     for (var i = 0; i < inputDataLength; i++) {
@@ -46,3 +46,13 @@ navigator.mediaDevices.getUserMedia(constraints).then(function (microphoneStream
     }
   }
 })
+
+function convertFloat32ToInt16(buffer) {
+    l = buffer.length
+    buf = new Int16Array(l)
+    while (l--) {
+      buf[l] = Math.min(1, buffer[l])*0x7FFF
+    }
+    console.log(buf.buffer)
+    ipcRenderer.send("microphone", new Uint8Array(buf.buffer))
+  }
