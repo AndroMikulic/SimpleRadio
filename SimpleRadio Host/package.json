@@ -37,8 +37,7 @@
   },
   "author": "Andro Mikulic",
   "license": "ISC",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "electron": "^4.0.5",
     "electron-builder": "^20.38.5"
